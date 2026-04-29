@@ -1,2 +1,4 @@
 thick-origami-derivation/
 understanding-matlab-code/
+*.nb
+*.docx
