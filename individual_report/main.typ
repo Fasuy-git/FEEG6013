@@ -77,11 +77,13 @@
 #counter(page).update(1)
 
 #include "summary_of_individual_contribution.typ"
+#include "technical_contribution.typ"
 
+#set heading(numbering: none)
 #box(
-  fill: aqua,
+  fill: aqua.darken(10%),
   width: 100%,
   inset: (x: 10pt),
   outset: (y: 5pt),
-  [== Summary of Individual Contribution & Key Achievements],
+  [= Appendix A: Thick Origami Kinematic Derivation],
 )
