@@ -50,19 +50,9 @@
 #pagebreak()  // start new page after title page
 
 #set page(
-  header: [
-    FEEG 6013: Group Design Project
-    #h(1fr)
-    #v(-0.3cm)
-    #line(length: 100%)
-  ],
   footer: context [
-    #align(center)[
-      #box(height: 14pt)[#v(0.35cm) #line(length: 43%)]
-      #h(0.569cm)
-      #counter(page).display("1")
-      #h(0.569cm)
-      #box(height: 14pt)[#v(0.35cm) #line(length: 43%)]
+    #align(right)[
+      Page #counter(page).display("1") of a maximum of 15
     ]
   ],
 )
@@ -77,19 +67,27 @@
 #set par(spacing: 1.5em)
 #set figure(gap: 1.5em)
 
-
-//#include "definitions.typ"
-
 #show: equate.with(breakable: true, sub-numbering: true)
 #set math.equation(numbering: "(1.1)", supplement: [Eq.])
 #set heading(numbering: "1.")
 #set math.mat(delim: "[")
 #set math.vec(delim: "[")
 
-//#include "log.typ"
 
-//#include "derivation.typ"
+#counter(page).update(1)
 
+#box(
+  fill: aqua.darken(10%),
+  width: 100%,
+  inset: (x: 10pt),
+  outset: (y: 5pt),
+  [= Summary of Individual Contribution & Key Achievements],
+)
 
-
-
+#box(
+  fill: aqua,
+  width: 100%,
+  inset: (x: 10pt),
+  outset: (y: 5pt),
+  [== Summary of Individual Contribution & Key Achievements],
+)
