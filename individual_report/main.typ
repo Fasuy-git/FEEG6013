@@ -76,13 +76,7 @@
 
 #counter(page).update(1)
 
-#box(
-  fill: aqua.darken(10%),
-  width: 100%,
-  inset: (x: 10pt),
-  outset: (y: 5pt),
-  [= Summary of Individual Contribution & Key Achievements],
-)
+#include "summary_of_individual_contribution.typ"
 
 #box(
   fill: aqua,
