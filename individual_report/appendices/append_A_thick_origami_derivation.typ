@@ -1,4 +1,4 @@
-#import "template.typ": *
+#import "../template.typ": *
 
 
 #box(
@@ -8,9 +8,6 @@
   outset: (y: 5pt),
   [= Appendix A: Thick Origami Kinematic Derivation],
 )
-
-
-#import "template.typ": *
 
 Each crease in the Miura-Ori geometry can be modelled as a revolute hinge, with Denavit-Hartenberg (DH) matrices allowing for transfromation between the coordinate system of one hinge to the other. A general DH matrix as well as an inverse DH matrix are shown in *@A-dh_matrix* and *@A-inverse-dh_matrix* respectively.
 

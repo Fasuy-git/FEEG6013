@@ -77,7 +77,7 @@
 #counter(page).update(1)
 
 #include "summary_of_individual_contribution.typ"
-#include "technical_contribution.typ"
+#include "technical_contribution/technical_contribution.typ"
 
 
 #pagebreak()
@@ -87,4 +87,4 @@
 #pagebreak()
 
 #set heading(numbering: none)
-#include "append_A_thick_origami_derivation.typ"
+#include "appendices/append_A_thick_origami_derivation.typ"
