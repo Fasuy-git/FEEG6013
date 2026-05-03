@@ -19,6 +19,32 @@ Due to the novelty involved in developing a computational model of thick panel M
   [== Preliminary Design Research],
 )
 
+It was critical that for this project, a strong understanding of the Miura-Ori geometry was developed as well as all aspect of the derivation needed to model the folding behavior (kinematic behavior) so that these derivations could be modified for the thick panel. This required detailed research on the uses of such geometries n different disciplines as well as current reports which adapted these family of geometries for novel spacecraft applications.
+
+The goal of this research was to fully understand the kinematic and geometrical derivations needed for the thin panel Miura-Ori geometry so that this could be adapted or modified for thick panel. A secondary outcome was to also gain an understanding of the current methods used to adapt Miura-Ori geometries for thick panels as well as their applications. Both of these outcomes of the research would then be applied in a computational model.
+
+A Miura-Ori geometry is classified as an origami pattern consisting of straight lines and zig zag lines. Each unit cell of the Miura-Ori geometry consists of 4 cells bounded by three zig zag lines and straight lines. A given unit cell will either have three mountain creases and one valley crease or three valley creases and one mountain crease. an example unit cell with the [] configuration is shown in
+
+// Picture of a base miura-ori cell
+
+The above configuration of the Miura-Ori geometry is defined as the base case geometry and once this unit cell is tessellated, the resulting structure displays advantageous mechanical properties, with the main two parameters being the compactness of teh structure in the folded state as well as the aucentic (negative Poisson's ratio) behavior that such structures show, these are shown in
+
+// Picture showing compactness and folding behaviour of such geometries as well as
+
+Second order derivatives of the base Miura-Ori geometry vary some of the base parameters shown in [] between cells. By modifying the unit cells in this way further advantageous mechanical properties can be developed such as spiraling, curvature and circular folding behaviors. Three geometries that allow for this behaviour are the Arc Miura, Inclined arc miura and tapered miura architecture, these three geometries being shown in [Image of the three unit cells] The geometrical and kinematical relationships of these three architectures are investigated within [Aditis paper] and [Gatas's].
+
+The goal of the computational model would be to allow for a top level definition of key geometric and kinematic parameters, as well as the number of panels within the structure. From the top level parameters, kinematic and geometrical calculations could be perfroamed to calculate key constants. The model would then iterate through all of the possible points within the geometry, generating and returning the cartesian coordinates of each point within the geometry.
+
+
+// Defgine what a mountain crease and valley and mountain crease is
+
+// Need an explanation of what origami actually is and could benefit with a futher explanation of kinematics
+// Need an explination of what the computaional model actually is, how ity takes in inputs and develops
+// What is a miura ori cell
+// What is a DH matrix
+// Look at example papers to see what these sections talk about
+
+// Could do a little work defining a compaction factor for the thick origami structure, wouldn't be too much work and would allow for some more discussion in teh paper./
 #box(
   fill: aqua,
   width: 100%,
@@ -36,3 +62,93 @@ Due to the novelty involved in developing a computational model of thick panel M
   [== Kinematic Analysis of Thick Panel Origami Structures],
 )
 
+// Explain what revolute hinges are and linkages. how revolute hinges allow for one degree of freedom rotation. and spatial linkages
+
+// Need to explain that we
+
+The kinematic behavior of Miura-Ori geometries is modeled by reducing each panel and fold crease to a system of revolute hinges and linkages. To convert between the coordinate system of one hinge and the next, Denavit-Hartenberg (DH) parameters can be used, where each transformation matrix can be joined together in a closure condition. A general configuration of a system of three revolute joints is shown in *@2-DH-image* with the four DH parameters annotated.
+
+R: Offset in the Z direction of the previous joint to the next.
+θ: Angle about Z from X of previous joint to the next X.
+a: Length in the X direction of the linkage between two hinges.
+$beta$: Angle about X from Z of previous joint to the next Z.
+
+#figure(
+  image("A-dh-joints.png", width: 60%),
+  caption: [Image depicting the four Denavit-Hartenberg parameters ($theta,a, R, beta$).],
+  supplement: [Figure],
+  kind: figure,
+)<2-DH-image>
+
+// Need to explain what all the parameters are
+
+As all Miura-Ori architectures consist of four creases meeting at a point, the kinematic analysis performed could be applied to all geometries. In thin panel configurations of the Miura-Ori architecture, all four creases that make up a unit cell meet at one point, allowing for the general DH configuration depicted in *@2-DH-image* to be reduced to a four revolute joint spherical linkage and so $a = 0 "and" R = 0$. This meant that each four by four DH transformation matrix could be reduced to a 3 by 3 matrix, thus reducing the total number of equations from 16 to 9.
+
+However, in thick panel architectures the thickness of each panel prevents all of the fold lines from meeting at one point, this is depicted in [picture showing the gap in the center of the thick miura cell]. In terms of the kinematic impact of this, $a eq.not 0$ and so the matrix size cannot be reduced. This meant that 16 equations would be generated from the closure conditions and not 9, with 3 of the equations containing $a$ terms and 4 equations being trivial.
+
+Due to the configuration of the Miura-Ori architecture some of the DH parameters could be related to one another, such relations are depicted in *@2-thick-origami-substitutions*.
+
+$
+  beta_12 = pi - beta_34 quad beta_23 = pi - beta_41 quad a_12 = a_34 quad a_23 = a_41 quad a_12 / a_23 = sin(beta_12)/sin(beta_34)
+$<2-thick-origami-substitutions>
+
+Applying the conditions in *@2-thick-origami-substitutions*, the three equations with thickness terms could then be simplified as the $a$ offset terms could be factored out and divided out. This meant that the set of equations left were identical to the ones for the thin origami case meaning the resulting derivation paralleled the one in [Aditis paper]. The final relationships between the $theta$ angles and the $beta$ angles which are the only remaining DH parameters from [aditis paper] are shown in *@2-kinematic-relationship-equations*.
+
+$
+  (tan theta_3)/(tan theta_2) = - (cos (beta_23 - beta_12)/2)/(cos (beta_23 + beta_12)/2)
+  quad quad
+  (tan theta_3)/(tan theta_4) = (cos (beta_23 - beta_12)/2)/(cos (beta_23 + beta_12)/2)
+  \
+  (tan theta_1)/(tan theta_2) = - (cos (beta_23 - beta_12)/2)/(cos (beta_23 + beta_12)/2)
+  quad quad
+  (tan theta_4)/(tan theta_1) = (cos (beta_23 - beta_12)/2)/(cos (beta_23 + beta_12)/2)
+$<2-kinematic-relationship-equations>
+
+
+// The image I put in brackets
+// Need a section on stakeholders for group reports.
+// Need a picture of a bennet linkage and a spherical linkage
+// Reference to how theta is the kinematic angle
+
+#box(
+  fill: aqua,
+  width: 100%,
+  inset: (x: 10pt),
+  outset: (y: 5pt),
+  [== Converting Kinematic Parameters into Geometrical Parameters.],
+)
+
+The expressions in *@2-kinematic-relationship-equations* describe kinematic variables however these must be converted to geometrical parameters related to the Miura-Ori geometry. The first step to do this is to convert the kinematic angle $theta$ to the dihedral angle $phi$ which is a geometric parameter defining the angle between two panels as they close whereas $theta$ describes the angle of the hinge between the incoming and outgoing linkage.
+
+For thin panel oragami this was simple as it only depenedant on if a given crease was a mountain crease or valley crease. The thin origami relationship between the kinematic angle and dihedral angle are shown in *@2-thin-kinematic-dihedral*.
+
+$
+  "Mountain" : \
+  "Valley"
+$<2-thin-kinematic-dihedral>
+
+For thick panel origami architectures however, the relationship is not as simple as the offset $a$ driven by the thickness does affect the relationship between these two parameters. Therefore the relationship between the kinematic angle and dihedral angle ends up being specific to each revolute hinge and so there are four relationships, these are shown in.
+
+$// Thickness relationship equations
+$
+
+In terms of the $beta$ angle, this can be related to the geometrical $phi.alt$ angle, these relationships are shown in
+
+$// Beta angles and phi.alt angle relationships
+$
+
+#box(
+  fill: aqua,
+  width: 100%,
+  inset: (x: 10pt),
+  outset: (y: 5pt),
+  [== Derivation for the Edge Angles for Thick Panel Origami.],
+)
+
+Gattas defines a geometrical parameter called the edge angle which can be used to tessilate the Miura-Ori unit cell. Gattas defines the equations for these in [equation link] and shown in [image link].
+
+It was important to validate that this edge angkle is not itself impacted by the thickness and so the equations had to be redireved.
+
+
+
+// TODO: Need to mention how we have two unit cells, either a three mountain crease configuration or a three valley crease configuration.

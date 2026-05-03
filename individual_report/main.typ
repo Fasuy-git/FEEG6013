@@ -79,11 +79,8 @@
 #include "summary_of_individual_contribution.typ"
 #include "technical_contribution.typ"
 
+#pagebreak()
+
 #set heading(numbering: none)
-#box(
-  fill: aqua.darken(10%),
-  width: 100%,
-  inset: (x: 10pt),
-  outset: (y: 5pt),
-  [= Appendix A: Thick Origami Kinematic Derivation],
-)
+
+#include "append_A_thick_origami_derivation.typ"
