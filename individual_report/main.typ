@@ -79,8 +79,12 @@
 #include "summary_of_individual_contribution.typ"
 #include "technical_contribution.typ"
 
+
+#pagebreak()
+
+#bibliography("references.bib", title: "References")
+
 #pagebreak()
 
 #set heading(numbering: none)
-
 #include "append_A_thick_origami_derivation.typ"
