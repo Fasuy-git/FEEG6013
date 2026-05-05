@@ -25,14 +25,18 @@ Due to the novelty involved in developing a computational model of thick panel M
   width: 100%,
   inset: (x: 10pt),
   outset: (y: 5pt),
-  [== Aims and Objectives],
+  [== Aims and Objectives For Computational Modelling],
 )
 
-// Defgine what a mountain crease and valley and mountain crease is
-// Need an explination of what the computaional model actually is, how ity takes in inputs and develops
-// What is a DH matrix
-// Look at example papers to see what these sections talk about
+The aim of the computational modelling work within ROAM-DS was to alter the existing kinematic relationships for thin panel Miura-Ori architectures to thick panel variants and then implement these relationship within a simulation to model the three dimensional folding behaviour of such structures. The intended long term goal of this simulation was to model the behaviour of higher level derivatives specifically the final thick-panel derivative architecture selected for the ROAM-DS communication dish. The decided objectives set to achieve this aim are as follows:
 
+- To adapt the existing kinematic relationships for thin panel Miura-Ori origami architectures to thick panel.
+- To identify an expandable thick panel geometry that can be simulated.
+- To create a ruleset to generate cartesian coordinates for the thick panel variant of the base Miura-Ori geometry.
+- To design a simulation architecture for the thick panel variant of the base Miura-Ori geometry.
+- To expand the ruleset and simulation to implement thick panel variants of first level derivates of the Miura-Ori architecture.
+- To combine the rulesets of multiple first level derivatives to yield second level derivatives of the Miura-Ori geometry.
+- To implement the final thick panel higher level derivative architecture chosen for thee ROAM-DS communication dish within the completed simulation framework.
 
 #box(
   fill: aqua,
