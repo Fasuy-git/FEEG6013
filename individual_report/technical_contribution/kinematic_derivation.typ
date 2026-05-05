@@ -51,25 +51,13 @@ This results in a differing set of simplifying conditions being imposed on the s
   ],
 )
 
-The spherical linkage configuration for thin panel origami meant that the $4 times 4$ DH transformation for each joint could be reduced to $3 times 3$ resulting in nine kinematic equations. As $a eq.not 0$ this reduction in matrix size cannot be done for thick panel configuration, 16 equations are generated of which three contain $a$ terms. These set of equations can be simplified by imposing geometrical constraints
-
-// Need picture of the joint sof each of the thin panle vs thick panel will have toi make one for thin panel. from this qoute equations simplifying a and beta. then qoute theta bits and you are done with this section
-
-
-
-/*
-
-
-
-However, in thick panel architectures the thickness of each panel prevents all of the fold lines from meeting at one point, this is depicted in [picture showing the gap in the center of the thick miura cell]. In terms of the kinematic impact of this, $a eq.not 0$ and so the matrix size cannot be reduced. This meant that 16 equations would be generated from the closure conditions and not 9, with 3 of the equations containing $a$ terms and 4 equations being trivial.
-
-Due to the configuration of the Miura-Ori architecture some of the DH parameters could be related to one another, such relations are depicted in *@2-thick-origami-substitutions*.
+The spherical linkage configuration for thin panel origami meant that the $4 times 4$ DH transformation matrix for each joint could be reduced to $3 times 3$, resulting in nine kinematic equations. As $a eq.not 0$ this reduction in matrix size cannot be done for thick panel configurations, and so 16 equations are generated of which three contain $a$ terms. These set of equations can be simplified by imposing geometrical constraints derived from the Miura-Ori geometry, these are shown in *@2-thick-origami-substitutions* where $beta$ simplifications can be done for both thin and thick panel configuration but $a$ simplifications can only be done for thick panel configurations.
 
 $
   beta_12 = pi - beta_34 quad beta_23 = pi - beta_41 quad a_12 = a_34 quad a_23 = a_41 quad a_12 / a_23 = sin(beta_12)/sin(beta_34)
 $<2-thick-origami-substitutions>
 
-Applying the conditions in *@2-thick-origami-substitutions*, the three equations with thickness terms could then be simplified as the $a$ offset terms could be factored out and divided out. This meant that the set of equations left were identical to the ones for the thin origami case meaning the resulting derivation paralleled the one in [Aditis paper]. The final relationships between the $theta$ angles and the $beta$ angles which are the only remaining DH parameters from [aditis paper] are shown in *@2-kinematic-relationship-equations*.
+Applying the conditions in *@2-thick-origami-substitutions* to the set of thick panel equations, it was found that the three equations with $a$ terms appeared as either a common factor on both sides of the equation or formed an expression equal to zero, allowing the $a$ terms to be cancelled out. This meant that there is no kinematic effect of the panel thickness and the remaining equations are identical to the thin origami case *@dataset* *@thick_panel_origami*. This means the kinematic relationship between the DH parameters are identical to the thin panel origami configuration, these equations are shown in  *@2-kinematic-relationship-equations*.
 
 $
   (tan theta_3)/(tan theta_2) = - (cos (beta_23 - beta_12)/2)/(cos (beta_23 + beta_12)/2)
@@ -80,11 +68,3 @@ $
   quad quad
   (tan theta_4)/(tan theta_1) = (cos (beta_23 - beta_12)/2)/(cos (beta_23 + beta_12)/2)
 $<2-kinematic-relationship-equations>
-
-
-// The image I put in brackets
-// Need a section on stakeholders for group reports.
-// Need a picture of a bennet linkage and a spherical linkage
-// Reference to how theta is the kinematic angle
-
-/*
