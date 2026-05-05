@@ -57,17 +57,7 @@ By altering two or more characteristics of the base Miura-Ori geometry, second l
 
 Thin panel origami has been the focus of much of the analysis and simulations on origami structures however as the thickness of the panels increase, the effect of the thickness of the panel on the kinematics of the structure cannot be neglected. Furthermore, thin panel origami simplifies crease behaviour and further neglects geometry intersection. Therefore, thick panel origami structures aim to encompass panel thickness within the kinematic behaviour *@thick_panel_origami* allowing for more realistic representation of the folding behaviors of origami structures. However, the analysis of thick panel origami necessitates more complex modelling approaches and generating the geometry of such origami structures also necessitates more complex rulesets.
 
+Many methods exist to computationally model the kinematic behaviour of origami structures *@computational_modelling_origami* such as utilizing basic trigonometric relationships to compute nodal positions for thin origami structures to utilizing spatial linkages to model the kinematic behaviour of thick panel structures.
 
-
-// Sections on computational modelling of origami structures
-//  It possesses a single degree of freedom of motion no matter how large the array
-//
-// Clearly lkay out gapo in literature and how there are no methods to tessliate thick panel geomtries in the same way we can tesslitae thin panel opnes
-
-
-// Defgine what a mountain crease and valley and mountain crease is
-
-// Need an explination of what the computaional model actually is, how ity takes in inputs and develops
-// What is a DH matrix
-// Look at example papers to see what these sections talk about
+One gap in the literature was combining many of the aforementioned concepts together. Mainly taking first and second level derivatives of the base Miura-Ori architecture and expanding their kinematic equations for the thin panel configurations of these geometries to thick panels. A computational model of these thick panel structures could leverage both trigonometric equations and spatial linkages to allow for full definition of the structure throughout its folding, allowing for a tool to simulate metasurfaces made from meta-atoms of Miura-Ori derivates.
 

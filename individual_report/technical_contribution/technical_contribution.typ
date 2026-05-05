@@ -28,6 +28,11 @@ Due to the novelty involved in developing a computational model of thick panel M
   [== Aims and Objectives],
 )
 
+// Defgine what a mountain crease and valley and mountain crease is
+// Need an explination of what the computaional model actually is, how ity takes in inputs and develops
+// What is a DH matrix
+// Look at example papers to see what these sections talk about
+
 
 #box(
   fill: aqua,
