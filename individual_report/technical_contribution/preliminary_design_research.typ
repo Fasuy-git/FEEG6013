@@ -1,22 +1,11 @@
 #include "../template.typ"
 
-// PLAN FOR THIS SECTION
-//
-// Explanation of what origami and kirigami is
-// Uses in industries
-// Uses in spacecraft
-// Thin origami vs thick origami
-// Modeling the folding behavior of origami structures
-// Types of computational models for origami
-// Need a definition of metamaterials and metastructures
-
-
 For this project, it was critical to develop an understanding of the Miura-Ori geometry as well as its derivatives and what advantageous properties this this family of origami geometries posses. As my focus within the project was on adapting thin panel Miura-Ori architectures for thick panel as well as computationally modelling these thick panel variants, further focus was applied on novel thick panel geometry sas well as the computational methods used to simulate origami structures. Motivated by this, a comprehensive literature review was undertaken with the following goals:
 
 + Understand the kinematic and geometrical derivations needed to model thin panel origami structures and adapt these to thick panel origami structures.
 + Ascertain the benefits of thick panel origami over thin panel specifically within the constant of Miura-Ori architectures and its derivatives.
 + Note novel thick panel geometries which can be used for the Miura-Ori family of origami structures.
-+ Identify the computational methods used for modelling the kinematic behavior (folding behavior) of origami structures.
++ Identify the computational methods used for modelling the kinematic behaviour (folding behaviour) of origami structures.
 
 Origami itself is defined as the art of folding objects out of paper to create both two-dimensional and three-dimensional subjects *@robinson2026origami* with its origins dating back to ancient Japan. In the modern day, the papercraft principles of origami have seen widespread use in various disciplines such as architecture, robotics and spacecraft structures.Whereas origami uses only folds, kirigami is a closely related subset which uses folds and cuts to create more complex structures.
 
@@ -26,7 +15,7 @@ The Miura-Ori origami pattern is a fundamental origami structure which sees four
 
 #figure(
   image("../images/2_base_miura_ori.png"),
-  caption: [Image depicting the base Miura-Ori architecture in an unfolded state with annotated repeated unit [Left], a partially folded state [Center] and a fully foldede state [Right] *@Gattas*.],
+  caption: [Image depicting the base Miura-Ori architecture in an unfolded state with annotated repeated unit [Left], a partially folded state [Center] and a fully folded state [Right] *@Gattas*.],
   supplement: [Figure],
   kind: figure,
 )<2-base-miura-ori>
@@ -35,41 +24,50 @@ The geometry itself is constructed with repeating parallelogram facets which the
 
 - Developability: The Miura-Ori architecture can be folded from a continuous flat sheet;
 - Flat-Foldability: All panels are coplanar when the pattern is fully folded.
-- Tessellation: The Miura-Ori architectur utilizes a repetitive unit cell geometry constructed from a single repeating plate size.
+- Tessellation: The Miura-Ori architecture utilizes a repetitive unit cell geometry constructed from a single repeating plate size.
+- Single DoF motion: The Miura-Ori architecture possesses a single Degree-of-Freedom (DoF) throughout its motion, irrespective of the size of the array *@Miura2009*.
 
-These properties
+// Below paragraph could mention space mirrors
+These properties have caused the Miura-Ori architecture to see widespread use in various fields as such as in solar panels for the Space Flyer Unit satellite *@Miura2009*, in increasing the impact resistance of structures *@XU2025110540*, in deployable antennas *@WANG2026106372* and in reconfigurable electromagnetic metamaterials for tunable wave manipulation *@chirality*.
+
+Further advantageous properties can be obtained by altering a characteristic of the base Miura-Ori geometry, such modified architectures are called first level derivatives. By changing the crease alignment of the zig-zag lines present between adjacent unit cells of the in the base Miura geometry, defines the Arc-Miura geometry, shown in *@2-arc-miura*. If instead the rectilinearity of the  base miura unit cell is changed, by changing the angles of the straight lines defining each panel so that they converge, the tapered Miura is defined shown in *@2-tapered-miura*.
+
+#figure(
+  image("../images/2-arc-miura-geometry.png"),
+  caption: [Image depicting a unit cell of the Arc-Miura architecture [Left] and the folding behaviour of the tessellated structure [Right] *@Gattas*.],
+  supplement: [Figure],
+  kind: figure,
+)<2-arc-miura>
+
+#figure(
+  image("../images/2-tapered-miura-geometry.png"),
+  caption: [Image depicting a unit cell of the tapered Miura architecture [Left] and the folding behaviour of the tessellated structure [Right] *@Gattas*.],
+  supplement: [Figure],
+  kind: figure,
+)<2-tapered-miura>
+
+By altering two or more characteristics of the base Miura-Ori geometry, second level derivatives can be defined. By altering both the crease alignment and by inclining each straight line by a constant angle, the inclined Arc-Miura geometry is defined and acts as an example of a second level derivative of the base geometry *@Aditi*. This architecture is shown in *@2-inclined-arc-miura*.
+
+#figure(
+  image("../images/2-inclined-arc-miura.png", width: 50%),
+  caption: [Image depicting a unit cell of the inclined Arc-Miura architecture [Left] and the folding behaviour of the tessellated structure [Right] *@Aditi*.],
+  supplement: [Figure],
+  kind: figure,
+)<2-inclined-arc-miura>
+
+Thin panel origami has been the focus of much of the analysis and simulations on origami structures however as the thickness of the panels increase, the effect of the thickness of the panel on the kinematics of the structure cannot be neglected. Furthermore, thin panel origami simplifies crease behaviour and further neglects geometry intersection. Therefore, thick panel origami structures aim to encompass panel thickness within the kinematic behaviour *@thick_panel_origami* allowing for more realistic representation of the folding behaviors of origami structures. However, the analysis of thick panel origami necessitates more complex modelling approaches and generating the geometry of such origami structures also necessitates more complex rulesets.
 
 
-// Below is first draft
 
-/*
-The goal of this research was to fully understand the kinematic and geometrical derivations needed for the thin panel Miura-Ori geometry so that this could be adapted or modified for thick panel. A secondary outcome was to also gain an understanding of the current methods used to adapt Miura-Ori geometries for thick panels as well as their applications. Both of these outcomes of the research would then be applied in a computational model.]
-*/
-
-
-
-// When we talk abouty the computational model we need to make refrence to rigid origami
-
-A Miura-Ori geometry is classified as an origami pattern consisting of straight lines and zig zag lines. Each unit cell of the Miura-Ori geometry consists of 4 cells bounded by three zig zag lines and straight lines. A given unit cell will either have three mountain creases and one valley crease or three valley creases and one mountain crease. an example unit cell with the [] configuration is shown in
-
-// Picture of a base miura-ori cell
-
-The above configuration of the Miura-Ori geometry is defined as the base case geometry and once this unit cell is tessellated, the resulting structure displays advantageous mechanical properties, with the main two parameters being the compactness of teh structure in the folded state as well as the aucentic (negative Poisson's ratio) behavior that such structures show, these are shown in
-
-// Picture showing compactness and folding behaviour of such geometries as well as
-
-Second order derivatives of the base Miura-Ori geometry vary some of the base parameters shown in [] between cells. By modifying the unit cells in this way further advantageous mechanical properties can be developed such as spiraling, curvature and circular folding behaviors. Three geometries that allow for this behaviour are the Arc Miura, Inclined arc miura and tapered miura architecture, these three geometries being shown in [Image of the three unit cells] The geometrical and kinematical relationships of these three architectures are investigated within [Aditis paper] and [Gatas's].
-
-The goal of the computational model would be to allow for a top level definition of key geometric and kinematic parameters, as well as the number of panels within the structure. From the top level parameters, kinematic and geometrical calculations could be perfroamed to calculate key constants. The model would then iterate through all of the possible points within the geometry, generating and returning the cartesian coordinates of each point within the geometry.
+// Sections on computational modelling of origami structures
+//  It possesses a single degree of freedom of motion no matter how large the array
+//
+// Clearly lkay out gapo in literature and how there are no methods to tessliate thick panel geomtries in the same way we can tesslitae thin panel opnes
 
 
 // Defgine what a mountain crease and valley and mountain crease is
 
-// Need an explanation of what origami actually is and could benefit with a futher explanation of kinematics
 // Need an explination of what the computaional model actually is, how ity takes in inputs and develops
-// What is a miura ori cell
 // What is a DH matrix
 // Look at example papers to see what these sections talk about
-
-// Could do a little work defining a compaction factor for the thick origami structure, wouldn't be too much work and would allow for some more discussion in teh paper./
 
