@@ -67,3 +67,13 @@ The aim of the computational modelling work within ROAM-DS was to alter the exis
 )
 
 #include "geometic_relationships.typ"
+
+#box(
+  fill: aqua,
+  width: 100%,
+  inset: (x: 10pt),
+  outset: (y: 5pt),
+  [== Initial Computational Model],
+)
+
+#include "initial_comp_model.typ"
