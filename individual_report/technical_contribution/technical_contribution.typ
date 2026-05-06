@@ -63,13 +63,7 @@ The aim of the computational modelling work within ROAM-DS was to alter the exis
   width: 100%,
   inset: (x: 10pt),
   outset: (y: 5pt),
-  [== Derivation for the Edge Angles for Thick Panel Origami.],
+  [== Geometrical Equations and Unit Vectors],
 )
 
-Gattas defines a geometrical parameter called the edge angle which can be used to tessilate the Miura-ori unit cell. Gattas defines the equations for these in [equation link] and shown in [image link].
-
-It was important to validate that this edge angkle is not itself impacted by the thickness and so the equations had to be redireved.
-
-
-
-// TODO: Need to mention how we have two unit cells, either a three mountain crease configuration or a three valley crease configuration.
+#include "geometic_relationships.typ"
