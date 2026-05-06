@@ -81,8 +81,13 @@
 
 
 #pagebreak()
-
+// Change the numbering to be when they appear
 #bibliography("references.bib", title: "References")
+
+#set page(
+  footer: context [
+  ],
+)
 
 #pagebreak()
 

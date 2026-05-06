@@ -139,5 +139,5 @@ $
     (beta_12) sin(theta_2)) = 0
 $<A-eq-3-4>
 
-In these three equations an $a_23$ term can be factored out, and given that $a_23 eq.not 0$ which is true for thick panel origami it can be removed from each equation. This implies that panel thickness has no impact on the kinematics of the origami structure. The remaining nine non-trivial equations (Eq (1,1) to Eq (3,3)) can then be manipulated using trigonometric identities *@dataset* to yield the nine kinematic relationships shown in *@2-kinematic-relationship-equations*.
+In these three equations an $a_23$ term can be factored out, and given that $a_23 eq.not 0$ which is true for thick panel origami it can be removed from each equation. This implies that panel thickness has no impact on the kinematics of the origami structure. The remaining nine non-trivial equations (Eq (1,1) to Eq (3,3)) can then be manipulated using trigonometric identities *@dataset* to yield the four kinematic relationships shown in *@2-kinematic-relationship-equations*.
 
