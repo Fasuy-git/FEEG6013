@@ -77,3 +77,15 @@ The aim of the computational modelling work within ROAM-DS was to alter the exis
 )
 
 #include "initial_comp_model.typ"
+
+#box(
+  fill: aqua,
+  width: 100%,
+  inset: (x: 10pt),
+  outset: (y: 5pt),
+  [== Development of the Coordinate Generation Ruleset],
+)
+
+#include "final_comp_model.typ"
+
+
