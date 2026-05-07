@@ -88,4 +88,13 @@ The aim of the computational modelling work within ROAM-DS was to alter the exis
 
 #include "final_comp_model.typ"
 
+#box(
+  fill: aqua,
+  width: 100%,
+  inset: (x: 10pt),
+  outset: (y: 5pt),
+  [== Final Computational Model and Simulation Architecture],
+)
+
+#include "final_final_comp_model.typ"
 
